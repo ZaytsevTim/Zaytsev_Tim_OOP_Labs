@@ -5,7 +5,7 @@
 <img width="1062" height="343" alt="image" src="https://github.com/user-attachments/assets/23a2062b-ac2f-4c6d-8717-22778d29ae7f" />
 
 ## Решение
-Согласно условию задачи реализована функция [int_to_32bit](src/int_to_32bit.cpp), располгаемая в директории src
+Согласно условию задачи реализована функция [num_to_32bit](src/num_to_32bit.cpp), расположенная в директории src
 
 ## Сборка и запуск проекта
 

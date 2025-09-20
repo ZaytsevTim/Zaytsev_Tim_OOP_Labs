@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblab_01_lib.a CMakeFiles/lab_01_lib.dir/src/num_to_32bit.cpp.o
+/usr/bin/ranlib liblab_01_lib.a

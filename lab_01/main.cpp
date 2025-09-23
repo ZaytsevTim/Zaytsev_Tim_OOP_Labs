@@ -2,7 +2,7 @@
 #include "include/num_to_32bit.h"
 
 int main(){
-    int num;
+    unsigned int num;
     std::cout << "enter your number:";
     std::cin >> num;
 

@@ -1,6 +1,6 @@
 #include "../include/num_to_32bit.h"
 
-std::string num_to_32bit(int num){
+std::string num_to_32bit(unsigned int num){
     std::string result = "";
     int len=0;
     while (num > 0){

@@ -28,7 +28,6 @@ class Twelve
         bool   smaller(const Twelve& other) const;
         std::ostream&   print(std::ostream& os);
 
-        Twelve& operator=(const Twelve& other) = default;
 
         // Twelve& operator+=(const Twelve& other){
         //     std::string new_num = to_twelve((*this).get_decimal() + other.get_decimal());

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "include/Twelve.h"
-#include "src/Twelve.cpp"
 
 int main(){
     std::string str;

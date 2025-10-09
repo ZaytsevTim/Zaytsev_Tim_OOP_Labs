@@ -1,5 +1,21 @@
 #include "../include/Twelve.h"
 
+std::string to_twelve(const int x){
+    std::string str;
+    int N = x;
+    while (N){
+        if (N % 12 > 9){
+            str += ((N % 12) - 10 + 'A');
+        }
+        else{
+            str += ((N % 12) + '0');
+        }
+            N /= 12;
+    }
+    std::reverse(str.begin(), str.end());
+    return str;
+} 
+
 Twelve::Twelve() : _size(1)
 {
     _number = new unsigned char[1];
@@ -74,22 +90,6 @@ std::ostream &Twelve::print(std::ostream &os)
     return os;
 }
 
-
-std::string to_twelve(const int x){
-    std::string str;
-    int N = x;
-    while (N){
-        if (N % 12 > 9){
-            str += ((N % 12) - 10 + 'A');
-        }
-        else{
-            str += ((N % 12) + '0');
-        }
-            N /= 12;
-    }
-    std::reverse(str.begin(), str.end());
-    return str;
-} 
 Twelve Twelve::plus(const Twelve& other) const{
     int a = other.get_decimal();
     int b = (*this).get_decimal();
@@ -112,6 +112,12 @@ Twelve Twelve::minus(const Twelve& other) const{
     }
     return Twelve(to_twelve(abs(a-b)));
 }
+
+// Twelve Twelve::minus(const Twelve& other) const{
+//     int a = (*this).get_decimal();
+//     int b = other.get_decimal();
+//     return Twelve(to_twelve(abs(a-b)));
+// }
 
 bool Twelve::equals(const Twelve& other) const{
     if (_size != other._size) return false;

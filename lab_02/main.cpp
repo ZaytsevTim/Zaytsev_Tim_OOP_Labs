@@ -10,6 +10,7 @@ int main(){
     std::cin >> str;
     std::cout << "Введите цифру в 12-ной СС и количество её повторений:\n";
     std::cin >> sz >> t;
+    
     try{
         Twelve first_num(str);
         Twelve second_num(sz, t);

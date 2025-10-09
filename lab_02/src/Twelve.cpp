@@ -129,7 +129,23 @@ bool Twelve::smaller(const Twelve& other) const{
     return (*this).get_decimal() < other.get_decimal();
 }
 
+// Twelve& plus_assign(const Twelve& other){
+//     std::string new_num = to_twelve((*this).get_decimal() + other.get_decimal());
+//     (*this)._size = new_num.size();
+//     for (int i=0; i <= (*this)._size ; i++){
+//         (*this)._number[i] = new_num[i];
+//     }
+//     return *this;
+// }
 
+// Twelve& minus_assign(const Twelve& other){
+//     std::string new_num = to_twelve((*this).get_decimal() - other.get_decimal());
+//     (*this)._size = new_num.size();
+//     for (int i=0; i <= (*this)._size ; i++){
+//         (*this)._number[i] = new_num[i];
+//     }
+//     return *this;
+ // }
 
 Twelve::~Twelve() noexcept
 {

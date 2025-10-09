@@ -56,7 +56,7 @@ Twelve::Twelve(const std::string &t)
 }
 
 Twelve::Twelve(const Twelve& other) : _size(other._size) {
-    _number = new unsigned char[_size];  // Без +1
+    _number = new unsigned char[_size];
     for (size_t i = 0; i < _size; i++) {
         _number[i] = other._number[i];
     }

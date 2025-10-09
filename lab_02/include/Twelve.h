@@ -27,19 +27,7 @@ class Twelve
         bool   bigger(const Twelve& other) const;
         bool   smaller(const Twelve& other) const;
         std::ostream&   print(std::ostream& os);
-
-        int get_decimal() const{
-            int result = 0;
-            for (int i = 0; i < _size; i++){
-                if (isdigit(_number[i])){
-                    result = result * 12 + (_number[i] - '0');
-                }
-                else{
-                    result = result * 12 + (_number[i] - 'A' + 10);
-                }
-            }
-            return result;
-        }
+        int get_decimal() const;
 
     private:
           size_t _size;

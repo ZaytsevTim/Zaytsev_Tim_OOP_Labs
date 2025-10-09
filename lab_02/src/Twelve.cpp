@@ -16,6 +16,19 @@ std::string to_twelve(const int x){
     return str;
 } 
 
+
+int Twelve::get_decimal() const{
+    int result = 0;
+    for (int i = 0; i < _size; i++){
+        if (isdigit(_number[i])){
+            result = result * 12 + (_number[i] - '0');
+        }
+        else{
+            result = result * 12 + (_number[i] - 'A' + 10);
+        }
+    }
+    return result;
+}
 Twelve::Twelve() : _size(1)
 {
     _number = new unsigned char[1];

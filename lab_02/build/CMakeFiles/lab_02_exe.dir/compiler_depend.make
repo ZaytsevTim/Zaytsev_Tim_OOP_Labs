@@ -211,8 +211,7 @@ CMakeFiles/lab_02_exe.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /usr/include/c++/11/pstl/execution_defs.h \
-  ../src/Twelve.cpp
+  /usr/include/c++/11/pstl/execution_defs.h
 
 
 /usr/include/c++/11/bits/vector.tcc:
@@ -320,8 +319,6 @@ CMakeFiles/lab_02_exe.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/stdlib.h:
-
-../src/Twelve.cpp:
 
 /usr/include/c++/11/bits/functional_hash.h:
 

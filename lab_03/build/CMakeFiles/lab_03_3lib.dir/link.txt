@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblab_03_3lib.a CMakeFiles/lab_03_3lib.dir/src/Square.cpp.o
+/usr/bin/ranlib liblab_03_3lib.a

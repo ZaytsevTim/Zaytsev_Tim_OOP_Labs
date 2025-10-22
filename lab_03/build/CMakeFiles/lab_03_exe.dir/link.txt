@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/lab_03_exe.dir/main.cpp.o -o lab_03_exe  liblab_03_1lib.a liblab_03_2lib.a liblab_03_3lib.a liblab_03_4lib.a 

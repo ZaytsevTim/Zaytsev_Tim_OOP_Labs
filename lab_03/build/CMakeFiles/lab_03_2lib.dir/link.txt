@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblab_03_2lib.a CMakeFiles/lab_03_2lib.dir/src/Rectangle.cpp.o
+/usr/bin/ranlib liblab_03_2lib.a

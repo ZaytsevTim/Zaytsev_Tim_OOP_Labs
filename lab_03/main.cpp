@@ -84,7 +84,7 @@ int main(){
                     for (size_t i = 0; i < figures.size(); i++){
                         sum += static_cast<double>(*figures[i]);
                     }
-                    std::cin >> sum;
+                    std::cout << sum << std::endl;
                 }
 
         }

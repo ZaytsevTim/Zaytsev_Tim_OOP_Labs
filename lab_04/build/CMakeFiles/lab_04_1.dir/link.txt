@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblab_04_1.a CMakeFiles/lab_04_1.dir/src/foo.cpp.o
+/usr/bin/ranlib liblab_04_1.a

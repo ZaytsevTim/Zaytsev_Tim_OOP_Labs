@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -isystem /home/tim/Zaytsev_Tim_OOP_Labs/lab_04/build/_deps/googletest-src/googletest/include -isystem /home/tim/Zaytsev_Tim_OOP_Labs/lab_04/build/_deps/googletest-src/googletest
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=gnu++20
 

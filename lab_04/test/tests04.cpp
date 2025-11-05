@@ -41,7 +41,7 @@ TEST(SquareTest, IntCoordinates) {
 
 TEST(TriangleTest, ConstructorAndArea) {
     Triangle<double> triangle(0, 0, 6.0, 4.0);
-    EXPECT_DOUBLE_EQ(triangle.area(), 12.0); // (6 * 4) / 2 = 12
+    EXPECT_DOUBLE_EQ(triangle.area(), 12.0);
 }
 
 TEST(TriangleTest, GeometricCenter) {
@@ -53,7 +53,7 @@ TEST(TriangleTest, GeometricCenter) {
 
 TEST(RectangleTest, ConstructorAndArea) {
     Rectangle<double> rect(0, 0, 4.0, 3.0);
-    EXPECT_DOUBLE_EQ(rect.area(), 12.0); // 4 * 3 = 12
+    EXPECT_DOUBLE_EQ(rect.area(), 12.0); 
 }
 
 TEST(RectangleTest, GeometricCenter) {

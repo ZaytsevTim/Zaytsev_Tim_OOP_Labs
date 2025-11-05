@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/tests.dir/test/tests04.cpp.o -o tests  liblab_04_1.a lib/libgtest_main.a lib/libgtest.a 
+/usr/bin/c++ CMakeFiles/tests.dir/test/tests04.cpp.o -o tests  lib/libgtest_main.a lib/libgtest.a 

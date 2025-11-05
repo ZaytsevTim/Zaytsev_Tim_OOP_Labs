@@ -1,4 +1,3 @@
-/home/tim/Zaytsev_Tim_OOP_Labs/lab_04/build/CMakeFiles/lab_04_1.dir
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_04/build/CMakeFiles/lab_04_exe.dir
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_04/build/CMakeFiles/tests.dir
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_04/build/CMakeFiles/test.dir

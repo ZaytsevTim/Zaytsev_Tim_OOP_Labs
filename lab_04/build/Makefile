@@ -172,19 +172,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab_04_1
-
-# Build rule for target.
-lab_04_1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab_04_1
-.PHONY : lab_04_1
-
-# fast build rule for target.
-lab_04_1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_04_1.dir/build.make CMakeFiles/lab_04_1.dir/build
-.PHONY : lab_04_1/fast
-
-#=============================================================================
 # Target rules for targets named lab_04_exe
 
 # Build rule for target.
@@ -286,30 +273,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_04_exe.dir/build.make CMakeFiles/lab_04_exe.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/foo.o: src/foo.cpp.o
-.PHONY : src/foo.o
-
-# target to build an object file
-src/foo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_04_1.dir/build.make CMakeFiles/lab_04_1.dir/src/foo.cpp.o
-.PHONY : src/foo.cpp.o
-
-src/foo.i: src/foo.cpp.i
-.PHONY : src/foo.i
-
-# target to preprocess a source file
-src/foo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_04_1.dir/build.make CMakeFiles/lab_04_1.dir/src/foo.cpp.i
-.PHONY : src/foo.cpp.i
-
-src/foo.s: src/foo.cpp.s
-.PHONY : src/foo.s
-
-# target to generate assembly for a file
-src/foo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_04_1.dir/build.make CMakeFiles/lab_04_1.dir/src/foo.cpp.s
-.PHONY : src/foo.cpp.s
-
 test/tests04.o: test/tests04.cpp.o
 .PHONY : test/tests04.o
 
@@ -351,15 +314,11 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... lab_04_1"
 	@echo "... lab_04_exe"
 	@echo "... tests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/foo.o"
-	@echo "... src/foo.i"
-	@echo "... src/foo.s"
 	@echo "... test/tests04.o"
 	@echo "... test/tests04.i"
 	@echo "... test/tests04.s"

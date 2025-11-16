@@ -23,9 +23,9 @@ FetchContent_MakeAvailable(googletest)
 # Добавление тестов
 enable_testing()
 
-# add_executable(tests test/tests05.cpp)
-# target_link_libraries(tests gtest_main)
+add_executable(tests test/tests05.cpp src/MemoryResource.cpp)
+target_link_libraries(tests gtest_main)
 
 
-# # Добавление тестов в тестовый набор
-# add_test(NAME MyProjectTests COMMAND tests)
+# Добавление тестов в тестовый набор
+add_test(NAME MyProjectTests COMMAND tests)

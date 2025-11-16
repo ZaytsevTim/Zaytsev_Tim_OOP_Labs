@@ -1,68 +1,136 @@
+#include "../include/PmrList.hpp"
+#include "../include/MemoryResource.hpp"
 #include <gtest/gtest.h>
-#include <iostream>
-#include <memory>
-#include "../include/Point.h"
-#include "../include/Figure.h"
-#include "../include/Square.h"
-#include "../include/Triangle.h"
-#include "../include/Rectangle.h"
-#include "../include/Array.h"
+#include <string>
 
-TEST(Point, ParameterizedConstructor) {
-    Point<double> p(3.5, 2.1);
-    EXPECT_DOUBLE_EQ(p.x(), 3.5);
-    EXPECT_DOUBLE_EQ(p.y(), 2.1);
+TEST(PmrListTest, DefaultConstruction) {
+    FixedBlockMemoryResource mem(1024);
+    PmrList<int> list(&mem);
+    
+    EXPECT_EQ(list.begin(), list.end());
 }
 
-TEST(Point, OutputOperator) {
-    Point<int> p(10, 20);
-    testing::internal::CaptureStdout();
-    std::cout << p;
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_EQ(output, "(10, 20)");
+TEST(PmrListTest, PushBackAndSize) {
+    FixedBlockMemoryResource mem(1024);
+    PmrList<int> list(&mem);
+    
+    list.push_back(123);
+    list.push_back(231);
+    list.push_back(999);
+    
+    int count = 0;
+    for (auto it = list.begin(); it != list.end(); ++it) {
+        ++count;
+    }
+    EXPECT_EQ(count, 3);
 }
 
-TEST(SquareTest, ConstructorAndGetters) {
-    Square<double> square(1.0, 2.0, 4.0);
-    Point<double> center = square.geom_center();
-    EXPECT_DOUBLE_EQ(center.x(), 1.0);
-    EXPECT_DOUBLE_EQ(center.y(), 2.0);
+TEST(PmrListTest, PushFront) {
+    FixedBlockMemoryResource mem(1024);
+    PmrList<int> list(&mem);
+    
+    list.push_front(806);
+    list.push_front(805);
+    list.push_front(801);
+    
+    auto it = list.begin();
+    EXPECT_EQ(*it, 801);
+    ++it;
+    EXPECT_EQ(*it, 805);
+    ++it;
+    EXPECT_EQ(*it, 806);
 }
 
-TEST(SquareTest, AreaCalculation) {
-    Square<double> square(0, 0, 5.0);
-    EXPECT_DOUBLE_EQ(square.area(), 25.0);
+TEST(IteratorTest, ForwardIteration) {
+    FixedBlockMemoryResource mem(1024);
+    PmrList<int> list(&mem);
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    
+    auto it = list.begin();
+    EXPECT_EQ(*it, 1);
+    ++it; 
+    EXPECT_EQ(*it, 2);
+    it++; 
+    EXPECT_EQ(*it, 3);
+    ++it;
+    EXPECT_EQ(it, list.end());
 }
 
-TEST(SquareTest, IntCoordinates) {
-    Square<int> square(0, 0, 3);
-    EXPECT_DOUBLE_EQ(square.area(), 9.0);
+TEST(IteratorTest, BackwardIteration) {
+    FixedBlockMemoryResource mem(1024);
+    PmrList<int> list(&mem);
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    
+    auto it = list.rbegin();
+    EXPECT_EQ(*it, 3);
+    --it;  
+    EXPECT_EQ(*it, 2);
+    it--; 
+    EXPECT_EQ(*it, 1);
 }
 
-TEST(TriangleTest, ConstructorAndArea) {
-    Triangle<double> triangle(0, 0, 6.0, 4.0);
-    EXPECT_DOUBLE_EQ(triangle.area(), 12.0);
+TEST(IteratorTest, IteratorComparison) {
+    FixedBlockMemoryResource mem(1024);
+    PmrList<int> list(&mem);
+    list.push_back(1);
+    list.push_back(2);
+    
+    auto it1 = list.begin();
+    auto it2 = list.begin();
+    auto end = list.end();
+    
+    EXPECT_EQ(it1, it2);
+    EXPECT_NE(it1, end);
+    
+    ++it1;
+    EXPECT_NE(it1, it2);
 }
 
-TEST(TriangleTest, GeometricCenter) {
-    Triangle<double> triangle(2.0, 3.0, 4.0, 5.0);
-    Point<double> center = triangle.geom_center();
-    EXPECT_DOUBLE_EQ(center.x(), 2.0);
-    EXPECT_DOUBLE_EQ(center.y(), 3.0);
+TEST(IteratorTest, ArrowOperator) {
+    struct Point { int x, y; };
+    FixedBlockMemoryResource mem(1024);
+    PmrList<Point> list(&mem);
+    list.push_back({10, 20});
+    
+    auto it = list.begin();
+    EXPECT_EQ(it->x, 10);
+    EXPECT_EQ(it->y, 20);
 }
 
-TEST(RectangleTest, ConstructorAndArea) {
-    Rectangle<double> rect(0, 0, 4.0, 3.0);
-    EXPECT_DOUBLE_EQ(rect.area(), 12.0); 
+struct Student {
+    std::string name;
+    int group;
+    double mark;
+};
+
+TEST(ComplexTypesTest, StructWithStrings) {
+    FixedBlockMemoryResource mem(2048);
+    PmrList<Student> list(&mem);
+    
+    list.push_back({"Alex", 214, 4.0});
+    list.push_back({"Matvey", 216, 4.9});
+    
+    auto it = list.begin();
+    EXPECT_EQ(it->name, "Alex");
+    EXPECT_EQ(it->group, 214);
+    ++it;
+    EXPECT_EQ(it->name, "Matvey");
+    EXPECT_EQ(it->group, 216);
 }
 
-TEST(RectangleTest, GeometricCenter) {
-    Rectangle<double> rect(1.5, 2.5, 6.0, 4.0);
-    Point<double> center = rect.geom_center();
-    EXPECT_DOUBLE_EQ(center.x(), 1.5);
-    EXPECT_DOUBLE_EQ(center.y(), 2.5);
-}
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+TEST(ComplexTypesTest, StringManipulation) {
+    FixedBlockMemoryResource mem(2048);
+    PmrList<std::string> list(&mem);
+    
+    list.push_back("8");
+    list.push_back(">");
+    list.push_back("3");
+    
+    auto it = list.begin();
+    *it = "NOVOE";
+    EXPECT_EQ(*list.begin(), "NOVOE");
 }

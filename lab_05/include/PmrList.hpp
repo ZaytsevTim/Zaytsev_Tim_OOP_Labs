@@ -83,12 +83,38 @@ public:
     class Iterator {
         Node* ptr;
     public:
+        using iterator_category = std::bidirectional_iterator_tag;
+        using value_type = T;
+        using difference_type = std::ptrdiff_t;
+        using pointer = T*;
+        using reference = T&;
+
         explicit Iterator(Node* p) : ptr(p) {}
 
-        T& operator*() const { return ptr->value; }
+        reference operator*() const { return ptr->value; }
+        pointer operator->() const { return &ptr->value; }
 
-        Iterator& operator++() { ptr = ptr->next; return *this; }
-        Iterator& operator--() { ptr = ptr->prev; return *this; }
+        Iterator& operator++() { 
+            ptr = ptr->next; 
+            return *this; 
+        }
+        
+        Iterator operator++(int) {
+            Iterator temp = *this;
+            ++(*this);
+            return temp;
+        }
+
+        Iterator& operator--() { 
+            ptr = ptr->prev; 
+            return *this; 
+        }
+        
+        Iterator operator--(int) {
+            Iterator temp = *this;
+            --(*this);
+            return temp;
+        }
 
         bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
         bool operator==(const Iterator& other) const { return ptr == other.ptr; }
@@ -99,6 +125,7 @@ public:
     Iterator begin() { return Iterator(head); }
     Iterator end() { return Iterator(nullptr); }
     Iterator rbegin() { return Iterator(tail); }
+    Iterator rend() { return Iterator(nullptr); }
 
     Node* front_node() const { return head; }
     Node* back_node() const { return tail; }

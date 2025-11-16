@@ -25,8 +25,8 @@ int main() {
 
     {
         PmrList<MyStruct> L2(&mem);
-        L2.push_back({1, 2.5, "hello"});
-        L2.push_back({7, 8.1, "world"});
+        L2.push_back({8, 3, ">"});
+        L2.push_back({806, 801, "MAI"});
 
         for (auto& v : L2)
             std::cout << v.x << " " << v.y << " " << v.s << "\n";

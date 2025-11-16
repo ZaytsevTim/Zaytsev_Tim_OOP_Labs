@@ -1,4 +1,5 @@
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_05/build/CMakeFiles/lab_05_exe.dir
+/home/tim/Zaytsev_Tim_OOP_Labs/lab_05/build/CMakeFiles/tests.dir
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_05/build/CMakeFiles/test.dir
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_05/build/CMakeFiles/edit_cache.dir
 /home/tim/Zaytsev_Tim_OOP_Labs/lab_05/build/CMakeFiles/rebuild_cache.dir

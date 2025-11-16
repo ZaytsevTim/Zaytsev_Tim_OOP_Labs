@@ -185,6 +185,19 @@ lab_05_exe/fast:
 .PHONY : lab_05_exe/fast
 
 #=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -266,6 +279,7 @@ src/MemoryResource.o: src/MemoryResource.cpp.o
 # target to build an object file
 src/MemoryResource.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_05_exe.dir/build.make CMakeFiles/lab_05_exe.dir/src/MemoryResource.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/MemoryResource.cpp.o
 .PHONY : src/MemoryResource.cpp.o
 
 src/MemoryResource.i: src/MemoryResource.cpp.i
@@ -274,6 +288,7 @@ src/MemoryResource.i: src/MemoryResource.cpp.i
 # target to preprocess a source file
 src/MemoryResource.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_05_exe.dir/build.make CMakeFiles/lab_05_exe.dir/src/MemoryResource.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/MemoryResource.cpp.i
 .PHONY : src/MemoryResource.cpp.i
 
 src/MemoryResource.s: src/MemoryResource.cpp.s
@@ -282,7 +297,32 @@ src/MemoryResource.s: src/MemoryResource.cpp.s
 # target to generate assembly for a file
 src/MemoryResource.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_05_exe.dir/build.make CMakeFiles/lab_05_exe.dir/src/MemoryResource.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/MemoryResource.cpp.s
 .PHONY : src/MemoryResource.cpp.s
+
+test/tests05.o: test/tests05.cpp.o
+.PHONY : test/tests05.o
+
+# target to build an object file
+test/tests05.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/tests05.cpp.o
+.PHONY : test/tests05.cpp.o
+
+test/tests05.i: test/tests05.cpp.i
+.PHONY : test/tests05.i
+
+# target to preprocess a source file
+test/tests05.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/tests05.cpp.i
+.PHONY : test/tests05.cpp.i
+
+test/tests05.s: test/tests05.cpp.s
+.PHONY : test/tests05.s
+
+# target to generate assembly for a file
+test/tests05.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/tests05.cpp.s
+.PHONY : test/tests05.cpp.s
 
 # Help Target
 help:
@@ -302,12 +342,16 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... lab_05_exe"
+	@echo "... tests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... src/MemoryResource.o"
 	@echo "... src/MemoryResource.i"
 	@echo "... src/MemoryResource.s"
+	@echo "... test/tests05.o"
+	@echo "... test/tests05.i"
+	@echo "... test/tests05.s"
 .PHONY : help
 
 

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/tim/Zaytsev_Tim_OOP_Labs/lab_05/src/MemoryResource.cpp" "CMakeFiles/tests.dir/src/MemoryResource.cpp.o" "gcc" "CMakeFiles/tests.dir/src/MemoryResource.cpp.o.d"
   "/home/tim/Zaytsev_Tim_OOP_Labs/lab_05/test/tests05.cpp" "CMakeFiles/tests.dir/test/tests05.cpp.o" "gcc" "CMakeFiles/tests.dir/test/tests05.cpp.o.d"
   )
 

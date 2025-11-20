@@ -21,6 +21,10 @@ int main() {
 
         for (int v : L) std::cout << v << " ";
         std::cout << "\n";
+        for(auto it = L.rbegin(); it != L.rend(); --it){
+            std::cout << *it << " ";
+        }
+        std::cout << "\n";
     }
 
     {
